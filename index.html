@@ -3,37 +3,17 @@
   <head>
     <title>HD44780 Bad Pixels Tester</title>
     <meta charset="utf-8" />
-    <style>
-      body {
-        font-family: monospace;
-        margin: 0 auto;
-        max-width: 320px;
-        padding: 2rem;
-        text-align: center;
-      }
-
-      table {
-        margin: 0 auto;
-      }
-
-      span.good {
-        font-size: 1rem;
-        font-weight: bold;
-      }
-
-      span.bad {
-        color: lightgray;
-        font-size: 1rem;
-        font-weight: bold;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/index.css" type="text/css" />
+    <link rel="shortcut icon" href="assets/favicon.svg" type="application/svg+xml" />
   </head>
   <body>
     <h1>HD44780 Bad Pixels Tester</h1>
     <p>Click on bad pixels to check what characters can still be displayed</p>
     <p>
-      <a href="">Reset</a> --
-      <a href="https://github.com/habitatofmatt/bad-pixels" target="_blank">Source</a>
+      <a href="">Reset</a> &middot;
+      <a href="https://github.com/habitatofmatt/bad-pixels" target="_blank">Source Code</a> &middot;
+      <a href="/">Back to Habitat</a>
     </p>
     <script type="text/javascript">
       /* Patterns from https://github.com/jazz-soft/char-lcd */
@@ -142,9 +122,7 @@
         outputText.textContent = "";
 
         const inputBitArray = [...checkboxTable.children].map((row) =>
-          [...row.children]
-            .map((cell) => cell.firstChild.checked)
-            .reduce((total, current) => (total << 1) + current)
+          [...row.children].map((cell) => cell.firstChild.checked).reduce((total, current) => (total << 1) + current)
         );
 
         for (const [label, bitArray] of Object.entries(patterns)) {
