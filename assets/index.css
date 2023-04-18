@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Source Sans";
-  src: url("SourceSans3VF-Upright.otf.woff2");
+  src: url("SourceSans3VF-Upright.ttf.woff2");
 }
 
 @font-face {
   font-family: "Source Sans";
   font-style: italic;
-  src: url("SourceSans3VF-Italic.otf.woff2");
+  src: url("SourceSans3VF-Italic.ttf.woff2");
 }
 
 body {
