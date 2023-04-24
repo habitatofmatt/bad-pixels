@@ -97,13 +97,13 @@ const patterns = {
   "←": [0, 4, 8, 31, 8, 4],
 };
 
-const checkboxTable = document.createElement("table");
-const outputText = document.createElement("p");
+const pattern = document.getElementById("pattern");
+const result = document.getElementById("result");
 
-function initializeOutputText() {
-  outputText.textContent = "";
+function initializeOutput() {
+  result.textContent = "";
 
-  const inputBitArray = [...checkboxTable.children].map((row) =>
+  const inputBitArray = [...pattern.children].map((row) =>
     [...row.children].map((cell) => cell.firstChild.checked).reduce((total, current) => (total << 1) + current)
   );
 
@@ -117,11 +117,11 @@ function initializeOutputText() {
       }
     }
 
-    const labelSpan = document.createElement("span");
-    labelSpan.className = bad ? "bad" : "good";
-    labelSpan.textContent = `${label} `;
+    const cell = document.createElement("div");
+    cell.className = bad ? "bad" : "good";
+    cell.textContent = label;
 
-    outputText.appendChild(labelSpan);
+    result.appendChild(cell);
   }
 }
 
@@ -130,23 +130,19 @@ function initializeTable() {
     const row = document.createElement("tr");
 
     for (let cellId = 0; cellId < 5; cellId++) {
-      const cellCheckbox = document.createElement("input");
-      cellCheckbox.type = "checkbox";
-      cellCheckbox.onchange = initializeOutputText;
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.onchange = initializeOutput;
 
       const cell = document.createElement("td");
-      cell.appendChild(cellCheckbox);
+      cell.appendChild(checkbox);
 
       row.appendChild(cell);
     }
 
-    checkboxTable.appendChild(row);
+    pattern.appendChild(row);
   }
 }
 
-const main = document.getElementsByTagName("main")[0];
-main.appendChild(checkboxTable);
-main.appendChild(outputText);
-
 initializeTable();
-initializeOutputText();
+initializeOutput();

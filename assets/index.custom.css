@@ -1,25 +1,32 @@
-table {
+#pattern {
   border-collapse: collapse;
+  margin-bottom: 0.5rem;
 }
 
-td {
+#pattern td {
   margin: 0;
   padding: 0 0.5rem 0.5rem 0;
 }
 
-input {
+#pattern td input {
   margin: 0;
   padding: 0;
 }
 
-.good {
-  display: inline-block;
-  font-weight: bold;
-  width: 1.25rem;
+#result {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 32rem;
 }
 
-.bad {
-  display: inline-block;
+#result div {
+  width: 2rem;
+}
+
+#result div.good {
+  font-weight: bold;
+}
+
+#result div.bad {
   opacity: 0.33;
-  width: 1.25rem;
 }
