@@ -144,8 +144,9 @@ function initializeTable() {
   }
 }
 
-document.body.appendChild(checkboxTable);
-document.body.appendChild(outputText);
+const main = document.getElementsByTagName("main")[0];
+main.appendChild(checkboxTable);
+main.appendChild(outputText);
 
 initializeTable();
 initializeOutputText();
