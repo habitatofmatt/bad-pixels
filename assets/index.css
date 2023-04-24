@@ -12,8 +12,9 @@
 body {
   background-color: #efe;
   color: #000;
-  font-family: "Source Sans", sans-serif;
+  font: 1rem "Source Sans", sans-serif;
   margin: 0 auto;
+  max-width: 56rem;
   padding: 1rem;
 }
 
@@ -25,25 +26,14 @@ h1 {
   font-weight: normal;
 }
 
-/* Customizations */
-
-body {
-  max-width: 360px;
-  text-align: center;
+strong {
+  font-weight: 600;
 }
 
-table {
-  margin: 0 auto;
-}
-
-.bad {
-  display: inline-block;
-  opacity: 0.25;
-  width: 1.5rem;
-}
-
-.good {
-  display: inline-block;
-  font-weight: bold;
-  width: 1.5rem;
+textarea {
+  box-sizing: border-box;
+  font: 1rem "Source Sans", sans-serif;
+  height: 10rem;
+  resize: vertical;
+  width: 100%;
 }
